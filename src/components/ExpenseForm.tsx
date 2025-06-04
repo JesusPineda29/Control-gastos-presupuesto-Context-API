@@ -48,7 +48,16 @@ export const ExpenseForm = () => {
         }
         // Agregar un nuevo gasto
         dispatch({type: 'add-expense', payload: { expense }});
+
+        // reiniciar el formulario/state
+        setExpense({
+            amount: 0,
+            expenseName: '',
+            category: '',
+            date: new Date()
+        });
     }
+
 
 
     return (
@@ -71,6 +80,7 @@ export const ExpenseForm = () => {
                     className="bg-slate-100 p-2"
                     name="expenseName"
                     onChange={handleChange}
+                    value={expense.expenseName}
                 />
             </div>
 
@@ -89,6 +99,7 @@ export const ExpenseForm = () => {
                     className="bg-slate-100 p-2"
                     name="amount"
                     onChange={handleChange}
+                    value={expense.amount}
                 />
             </div>
 
@@ -104,6 +115,7 @@ export const ExpenseForm = () => {
                     className="bg-slate-100 p-2"
                     name="category"
                     onChange={handleChange}
+                    value={expense.category}
                 >
                     <option value="">-- Selecciona una categoria --</option>
                     {categories.map(category => (
