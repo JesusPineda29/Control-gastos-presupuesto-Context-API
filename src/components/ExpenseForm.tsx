@@ -23,11 +23,11 @@ export const ExpenseForm = () => {
     const { dispatch, state } = useBudget();
 
     useEffect(() => {
-        if(state.editingId) {
-            const editingExpense = state.expenses.filter(currentExpense => currentExpense.id === state.editingId )[0]
+        if (state.editingId) {
+            const editingExpense = state.expenses.filter(currentExpense => currentExpense.id === state.editingId)[0]
             setExpense(editingExpense)
         }
-    },[state.editingId])
+    }, [state.editingId])
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
@@ -53,8 +53,14 @@ export const ExpenseForm = () => {
             setError('Todos los campos son obligatorios');
             return;
         }
-        // Agregar un nuevo gasto
-        dispatch({type: 'add-expense', payload: { expense }});
+
+        // Agregar o actualizar el gasto
+        if (state.editingId) {
+            dispatch({ type: 'update-expense', payload: { expense: { id: state.editingId, ...expense } } })
+        } else {
+            dispatch({ type: 'add-expense', payload: { expense } });
+        }
+
 
         // reiniciar el formulario/state
         setExpense({
