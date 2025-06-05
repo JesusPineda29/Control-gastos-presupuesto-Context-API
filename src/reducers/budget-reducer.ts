@@ -119,7 +119,8 @@ export const budgetReducer = (state: BudgetState = initialState, actions: Budget
             budget: 0,
             modal: false,
             expenses: [],
-            editingId: ''
+            editingId: '',
+            currentCategory: ''
         }
     }
 
