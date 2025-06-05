@@ -18,28 +18,29 @@ function App() {
     localStorage.setItem('expenses', JSON.stringify(state.expenses))
   }, [state])
 
-  return (
-    <>
-      <header className="bg-blue-600 py-8 max-h-72">
-        <h1 className="uppercase text-center font-black text-4xl text-white">Planificador de Gastos</h1>
-      </header>
+return (
+  <div className="flex flex-col min-h-screen bg-slate-100">
+    <header className="bg-blue-600 py-8 max-h-72">
+      <h1 className="uppercase text-left font-black text-4xl text-white pl-10">Planificador de Gastos</h1>
+    </header>
 
-
-      <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg mt-10 p-10">
+    {/* Contenido que crece */}
+    <main className="flex-grow max-w-3xl mx-auto py-10">
+      <div className="bg-white shadow-lg rounded-lg p-10  max-w-4xl mx-auto">
         {isValidBudget ? <BudgetTracker /> : <BudgetForm />}
       </div>
 
       {isValidBudget && (
-        <main className='max-w-3xl mx-auto py-10'>
-          <FilterByCategory/>
+        <>
+          <FilterByCategory />
           <ExpenseList />
           <ExpenseModal />
-        </main>
+        </>
       )}
+    </main>
 
-      <Footer/>
-
-    </>
+    <Footer />
+  </div>
   )
 }
 

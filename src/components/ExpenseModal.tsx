@@ -17,7 +17,7 @@ export default function ExpenseModal() {
                     onClick={() => dispatch({ type: 'show-modal' })}
                     className='cursor-pointer'
                 >
-                    <PlusCircleIcon className='w-16 h-16 text-blue-600 rounded-full' />
+                    <PlusCircleIcon className='w-16 h-16 text-pink-500 rounded-full' />
                 </button>
             </div>
 

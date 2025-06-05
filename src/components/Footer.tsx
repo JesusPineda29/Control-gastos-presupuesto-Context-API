@@ -1,49 +1,59 @@
+import { FaGlobe, FaLinkedin, FaGithub } from 'react-icons/fa';
+
 export const Footer = () => {
   return (
-    <footer className="bg-blue-900 text-white py-10">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex flex-col sm:flex-row sm:justify-between items-center text-center gap-4 w-full">
+    <footer className="bg-blue-600 text-white py-12">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-8">
           
-          <div className="sm:text-left">
-            <p className="text-2xl font-bold">Planificador de Gastos</p>
-            <p className="text-sm">Desarrollado por <strong>Jesús Pineda</strong></p>
+
+          <div className="sm:flex-1">
+            <p className="text-3xl font-extrabold mb-1">Planificador de Gastos</p>
+            <p className="text-sm text-gray-300">
+              Desarrollado por <strong>Jesús Pineda</strong>
+            </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 mt-4 sm:mt-0">
+
+          <nav className="flex gap-10 sm:gap-12 justify-center sm:justify-start flex-1">
             <a
               href="https://jesus-pineda-portafolio.netlify.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-pink-500 transition-colors"
+              aria-label="Sitio Web personal"
+              className="flex items-center gap-3 text-gray-200 hover:text-pink-500 transition-colors"
             >
-              <i className="fas fa-globe"></i>
-              <span>Sitio Web</span>
+              <FaGlobe size={22} />
+              <span className="font-medium">Sitio Web</span>
             </a>
 
             <a
               href="https://www.linkedin.com/in/jesús-pineda-630a3b300"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-pink-500 transition-colors"
+              aria-label="Perfil de LinkedIn"
+              className="flex items-center gap-3 text-gray-200 hover:text-pink-500 transition-colors"
             >
-              <i className="fab fa-linkedin"></i>
-              <span>LinkedIn</span>
+              <FaLinkedin size={22} />
+              <span className="font-medium">LinkedIn</span>
             </a>
 
             <a
               href="https://github.com/JesusPineda29"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-pink-500 transition-colors"
+              aria-label="Repositorio en GitHub"
+              className="flex items-center gap-3 text-gray-200 hover:text-pink-500 transition-colors"
             >
-              <i className="fab fa-github"></i>
-              <span>GitHub</span>
+              <FaGithub size={22} />
+              <span className="font-medium">GitHub</span>
             </a>
-          </div>
+          </nav>
 
-          <p className="text-xs mt-6 sm:mt-0 text-gray-400">
+
+          <div className="sm:flex-1 text-center sm:text-right text-white text-sm">
             © {new Date().getFullYear()} - Todos los derechos reservados
-          </p>
+          </div>
         </div>
       </div>
     </footer>
