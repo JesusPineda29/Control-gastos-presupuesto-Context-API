@@ -34,5 +34,5 @@ Aplicación web para gestionar tu presupuesto personal y controlar tus gastos de
 
 **Jesús Pineda**
 
-- GitHub: [@jesuspineda](https://github.com/jesuspineda)
+- GitHub: [@jesusPineda29](https://github.com/jesusPineda29)
 - LinkedIn: <u>[www.linkedin.com/in/jesús-pineda-630a3b300](https://www.linkedin.com/in/jesús-pineda-630a3b300)</u>
