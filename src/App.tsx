@@ -5,6 +5,7 @@ import { BudgetTracker } from './components/BudgetTracker';
 import ExpenseModal from './components/ExpenseModal';
 import { ExpenseList } from './components/ExpenseList';
 import { FilterByCategory } from './components/FilterByCategory';
+import { Footer } from './components/Footer';
 
 
 function App() {
@@ -35,6 +36,8 @@ function App() {
           <ExpenseModal />
         </main>
       )}
+
+      <Footer/>
 
     </>
   )
