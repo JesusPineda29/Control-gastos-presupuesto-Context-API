@@ -19,13 +19,14 @@ export const ExpenseForm = () => {
     });
 
     const [error, setError] = useState('');
-
-    const { dispatch, state } = useBudget();
+    const [previousAmount, setPreviousAmount ] = useState(0);
+    const { dispatch, state, remainingBudget } = useBudget();
 
     useEffect(() => {
         if (state.editingId) {
             const editingExpense = state.expenses.filter(currentExpense => currentExpense.id === state.editingId)[0]
             setExpense(editingExpense)
+            setPreviousAmount(editingExpense.amount)
         }
     }, [state.editingId])
 
@@ -54,6 +55,12 @@ export const ExpenseForm = () => {
             return;
         }
 
+        // Validar que no me pase del limite
+        if ((expense.amount - previousAmount ) > remainingBudget) {
+            setError('Ese gasto se sale del presupuesto');
+            return;
+        }
+
         // Agregar o actualizar el gasto
         if (state.editingId) {
             dispatch({ type: 'update-expense', payload: { expense: { id: state.editingId, ...expense } } })
@@ -69,6 +76,7 @@ export const ExpenseForm = () => {
             category: '',
             date: new Date()
         });
+        setPreviousAmount(0)
     }
 
 
@@ -159,7 +167,7 @@ export const ExpenseForm = () => {
             <input
                 type="submit"
                 className="bg-blue-600 cursor-pointer w-full p-2 text-white uppercase font-bold rounded-lg text-center"
-                value={state.editingId ? 'Guardar Cambios' : "Registrar Gasto"} 
+                value={state.editingId ? 'Guardar Cambios' : "Registrar Gasto"}
             />
 
         </form>
