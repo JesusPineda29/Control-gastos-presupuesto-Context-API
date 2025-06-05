@@ -3,7 +3,7 @@
 
 Aplicación web para gestionar tu presupuesto personal y controlar tus gastos de manera eficiente. Permite definir un presupuesto inicial, registrar gastos por categorías, visualizar el estado actual del presupuesto y realizar filtrados por categoría.
 
-🔗 **Demo en vivo**: [planificador-gastos-84f9fa.netlify.app](planificador-gastos-84f9fa.netlify.app)
+🔗 **Demo en vivo**: [https://planificador-gastos-84f9fa.netlify.app](https://planificador-gastos-84f9fa.netlify.app)
 
 ---
 
